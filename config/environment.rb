@@ -20,11 +20,7 @@ APP_NAME = APP_ROOT.basename.to_s
   configure do
     set :root, APP_ROOT.to_path
     set :server, :puma
-
-    enable :sessions
-    set :protection, session: true
     set :session_secret, ENV['SESSION_KEY'] || 'sinatra_skeleton_secret'
-
     set :views, File.join(Sinatra::Application.root, "app", "views")
   end
 
